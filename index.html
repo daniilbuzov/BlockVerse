@@ -19,7 +19,7 @@
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 body { 
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Comic Sans MS', 'Nunito', cursive, sans-serif;
   background: var(--bg);
   color: var(--text);
   overflow: hidden;
@@ -52,6 +52,9 @@ body {
   padding: 40px 32px;
   backdrop-filter: blur(20px);
   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+@media (max-width: 768px) {
+  .auth-box { padding: 30px 24px; }
 }
 .auth-logo {
   font-family: 'Fredoka One', cursive;
@@ -86,7 +89,7 @@ body {
   border: none;
   background: transparent;
   color: var(--text2);
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Comic Sans MS', cursive;
   font-size: 15px;
   font-weight: 700;
   border-radius: 10px;
@@ -114,7 +117,7 @@ body {
   border-radius: 10px;
   padding: 14px 16px;
   color: var(--text);
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Comic Sans MS', cursive;
   font-size: 15px;
   outline: none;
   transition: all 0.2s;
@@ -136,9 +139,9 @@ body {
   border-radius: 12px;
   padding: 16px;
   color: white;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Comic Sans MS', cursive;
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -192,9 +195,7 @@ body {
   gap: 4px;
   flex-shrink: 0;
 }
-@media (max-width: 768px) {
-  .menu-sidebar { display: none !important; }
-}
+.menu-sidebar.mobile-hide { display: flex; }
 .sidebar-logo {
   font-family: 'Fredoka One', cursive;
   font-size: 24px;
@@ -209,7 +210,7 @@ body {
   display: flex; align-items: center; gap: 10px;
   padding: 11px 14px; border-radius: 10px;
   border: none; background: transparent; color: var(--text2);
-  font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 700;
+  font-family: 'Comic Sans MS', cursive; font-size: 14px; font-weight: 700;
   cursor: pointer; transition: all 0.15s; width: 100%; text-align: left;
 }
 .menu-btn:hover { background: rgba(255,255,255,0.05); color: var(--text); }
@@ -243,10 +244,7 @@ body {
   z-index: 100;
   backdrop-filter: blur(10px);
 }
-@media (max-width: 768px) {
-  .mobile-nav { display: block; }
-  .menu-content { padding-bottom: 65px; }
-}
+.mobile-nav.mobile-show { display: block; }
 .mobile-nav-items {
   display: flex;
   justify-content: space-around;
@@ -260,6 +258,7 @@ body {
   border: none;
   background: transparent;
   color: var(--text2);
+  font-family: 'Comic Sans MS', cursive;
   font-size: 10px;
   font-weight: 700;
   cursor: pointer;
@@ -271,21 +270,21 @@ body {
 .tab-content { display: none; height: 100%; overflow-y: auto; }
 .tab-content.active { display: block; }
 .home-wrap { padding: 28px; }
-@media (max-width: 768px) { .home-wrap { padding: 14px; } }
+.home-wrap.mobile-padding { padding: 14px; padding-bottom: 75px; }
 .home-banner {
   background: linear-gradient(135deg, #1a0533, #0d1a33);
   border: 1px solid var(--border);
   border-radius: 18px; padding: 36px;
   position: relative; overflow: hidden; margin-bottom: 28px;
 }
-@media (max-width: 768px) { .home-banner { padding: 20px; } }
+.home-banner.mobile-padding { padding: 20px; }
 .banner-title { font-family:'Fredoka One',cursive; font-size:38px; margin-bottom:6px; }
-@media (max-width: 768px) { .banner-title { font-size: 26px; } }
+.banner-title.mobile-size { font-size: 26px; }
 .banner-sub { color:var(--text2); font-size:14px; margin-bottom:20px; }
 .banner-btn {
   background: linear-gradient(135deg, #ff4d6d, #c02045);
   border: none; border-radius: 10px; padding: 13px 26px;
-  font-family:'Nunito',sans-serif; font-size:14px; font-weight:800;
+  font-family: 'Comic Sans MS', cursive; font-size:14px; font-weight:700;
   color: white; cursor: pointer; transition:all 0.2s;
 }
 .banner-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(255,77,109,0.4); }
@@ -296,11 +295,9 @@ body {
   gap:14px; 
   margin-bottom:28px; 
 }
-@media (max-width: 768px) {
-  .games-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-}
-@media (max-width: 480px) {
-  .games-grid { grid-template-columns: 1fr; }
+.games-grid.mobile-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 .game-card {
   background: var(--surface);
@@ -334,12 +331,12 @@ body {
 
 /* ===== FRIENDS ===== */
 .friends-wrap { padding:28px; }
-@media (max-width: 768px) { .friends-wrap { padding: 14px; } }
+.friends-wrap.mobile-padding { padding: 14px; padding-bottom: 75px; }
 .friends-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap: wrap; gap: 14px; }
 .add-btn {
   background:linear-gradient(135deg,#ff4d6d,#c02045);
   border:none; border-radius:10px; padding:11px 18px;
-  color:white; font-size:13px; font-weight:800;
+  color:white; font-family: 'Comic Sans MS', cursive; font-size:13px; font-weight:700;
   cursor:pointer; transition:all 0.2s; display:flex; align-items:center; gap:6px;
 }
 .friend-list { display:flex; flex-direction:column; gap:6px; }
@@ -375,7 +372,7 @@ body {
   display:flex; align-items:center; gap:5px;
   background:rgba(255,255,255,0.05); border:1px solid var(--border);
   border-radius:8px; padding:7px 12px; color:var(--text);
-  font-size:12px; font-weight:700; white-space:nowrap;
+  font-family: 'Comic Sans MS', cursive; font-size:12px; font-weight:700; white-space:nowrap;
   cursor:pointer; transition:all 0.2s;
 }
 .tool-btn:hover { background:rgba(255,255,255,0.1); }
@@ -385,19 +382,19 @@ body {
   width:200px; background:var(--surface); border-right:1px solid var(--border);
   padding:10px; overflow-y:auto; flex-shrink:0;
 }
-@media (max-width: 768px) { .studio-left { display: none; } }
+.studio-left.mobile-hide { display: block; }
 .studio-canvas-wrap { flex:1; position:relative; overflow:hidden; }
 #studioCanvas { width:100%; height:100%; display:block; }
 .studio-right {
   width:200px; background:var(--surface); border-left:1px solid var(--border);
   padding:10px; overflow-y:auto; flex-shrink:0;
 }
-@media (max-width: 768px) { .studio-right { display: none; } }
+.studio-right.mobile-hide { display: block; }
 .prop-label { font-size:11px; color:var(--text2); font-weight:700; margin-bottom:5px; }
 .prop-input {
   width:100%; background:var(--bg); border:1px solid var(--border);
   border-radius:8px; padding:7px 10px; color:var(--text);
-  font-size:12px; outline:none;
+  font-family: 'Comic Sans MS', cursive; font-size:12px; outline:none;
 }
 .color-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:3px; }
 .color-swatch {
@@ -407,8 +404,10 @@ body {
 
 /* ===== AVATAR ===== */
 .avatar-wrap { padding:28px; display:flex; gap:28px; height:100%; overflow-y:auto; }
-@media (max-width: 768px) {
-  .avatar-wrap { padding: 14px; flex-direction: column; }
+.avatar-wrap.mobile-style {
+  padding: 14px;
+  flex-direction: column;
+  padding-bottom: 75px;
 }
 .avatar-preview-panel { 
   width:320px; flex-shrink:0;
@@ -416,9 +415,7 @@ body {
   border-radius:18px; padding:20px; display:flex; flex-direction:column; align-items:center; gap:16px;
   height:fit-content;
 }
-@media (max-width: 768px) {
-  .avatar-preview-panel { width: 100%; }
-}
+.avatar-preview-panel.mobile-full { width: 100%; }
 .avatar-3d-wrap { 
   width:200px; height:260px; position:relative; border-radius:12px;
   background: radial-gradient(ellipse at 50% 80%, rgba(124,58,237,0.2), transparent);
@@ -428,24 +425,20 @@ body {
 .avatar-equip-btn {
   width:100%; background:linear-gradient(135deg,#7c3aed,#4c1d95);
   border:none; border-radius:10px; padding:11px;
-  color:white; font-size:13px; font-weight:800;
+  color:white; font-family: 'Comic Sans MS', cursive; font-size:13px; font-weight:700;
   cursor:pointer; transition:all 0.2s;
 }
 .avatar-customize { flex:1; overflow-y:auto; }
 .customize-section { margin-bottom:20px; }
 .section-label { font-size:15px; font-weight:800; margin-bottom:12px; display:flex; align-items:center; gap:6px; }
 .skin-grid { display:grid; grid-template-columns:repeat(8,1fr); gap:6px; }
-@media (max-width: 768px) {
-  .skin-grid { grid-template-columns: repeat(6, 1fr); }
-}
+.skin-grid.mobile-grid { grid-template-columns: repeat(6, 1fr); }
 .skin-swatch {
   aspect-ratio:1; border-radius:6px; cursor:pointer; border:2.5px solid transparent;
 }
 .skin-swatch.active { border-color:white; }
 .items-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
-@media (max-width: 768px) {
-  .items-grid { grid-template-columns: repeat(3, 1fr); }
-}
+.items-grid.mobile-grid { grid-template-columns: repeat(3, 1fr); }
 .item-card {
   background:var(--surface); border:2px solid var(--border);
   border-radius:10px; padding:10px; cursor:pointer; transition:all 0.2s;
@@ -474,7 +467,7 @@ body {
 .game-title-hud { font-family:'Fredoka One',cursive; font-size:20px; color:white; text-shadow:0 2px 8px rgba(0,0,0,0.9); }
 .hud-exit {
   background:rgba(255,77,109,0.85); border:none; border-radius:8px;
-  padding:9px 14px; color:white; font-size:12px; font-weight:800;
+  padding:9px 14px; color:white; font-family: 'Comic Sans MS', cursive; font-size:12px; font-weight:700;
   cursor:pointer; pointer-events:all;
 }
 .hud-players {
@@ -494,9 +487,7 @@ body {
   border-radius:10px; padding:10px; backdrop-filter:blur(10px);
   width:240px;
 }
-@media (max-width: 768px) {
-  .hud-chat { width: 180px; }
-}
+.hud-chat.mobile-size { width: 180px; }
 .chat-messages { 
   height:100px; overflow-y:auto; margin-bottom:7px;
   display:flex; flex-direction:column; gap:3px;
@@ -506,7 +497,7 @@ body {
 .chat-input {
   flex:1; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15);
   border-radius:7px; padding:7px 10px; color:white;
-  font-size:12px; outline:none; pointer-events:all;
+  font-family: 'Comic Sans MS', cursive; font-size:12px; outline:none; pointer-events:all;
 }
 
 /* Mobile Controls */
@@ -519,8 +510,10 @@ body {
   padding: 18px;
   pointer-events: all;
 }
-@media (max-width: 768px) {
-  .mobile-controls { display: flex; justify-content: space-between; align-items: flex-end; }
+.mobile-controls.mobile-show {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 .joystick {
   width: 110px;
@@ -585,12 +578,12 @@ body {
 
     <form class="auth-form active" id="loginForm" onsubmit="handleLogin(event)">
       <div class="auth-field">
-        <label class="auth-label">Имя пользователя или Email</label>
-        <input class="auth-input" type="text" id="loginUsername" placeholder="ВведиСвойНик" required>
+        <label class="auth-label">Имя пользователя</label>
+        <input class="auth-input" type="text" id="loginUsername" placeholder="ВведиСвойНик" required autocomplete="username">
       </div>
       <div class="auth-field">
         <label class="auth-label">Пароль</label>
-        <input class="auth-input" type="password" id="loginPassword" placeholder="••••••••" required>
+        <input class="auth-input" type="password" id="loginPassword" placeholder="••••••••" required autocomplete="current-password">
       </div>
       <div class="auth-checkbox">
         <input type="checkbox" id="remember">
@@ -602,19 +595,19 @@ body {
     <form class="auth-form" id="registerForm" onsubmit="handleRegister(event)">
       <div class="auth-field">
         <label class="auth-label">Имя пользователя</label>
-        <input class="auth-input" type="text" id="regUsername" placeholder="Придумай крутой ник" required minlength="3">
+        <input class="auth-input" type="text" id="regUsername" placeholder="Придумай крутой ник" required minlength="3" autocomplete="username">
       </div>
       <div class="auth-field">
         <label class="auth-label">Email</label>
-        <input class="auth-input" type="email" id="regEmail" placeholder="твой@email.com" required>
+        <input class="auth-input" type="email" id="regEmail" placeholder="твой@email.com" required autocomplete="email">
       </div>
       <div class="auth-field">
         <label class="auth-label">Пароль</label>
-        <input class="auth-input" type="password" id="regPassword" placeholder="••••••••" required minlength="6">
+        <input class="auth-input" type="password" id="regPassword" placeholder="••••••••" required minlength="6" autocomplete="new-password">
       </div>
       <div class="auth-field">
         <label class="auth-label">Подтверди пароль</label>
-        <input class="auth-input" type="password" id="regPasswordConfirm" placeholder="••••••••" required minlength="6">
+        <input class="auth-input" type="password" id="regPasswordConfirm" placeholder="••••••••" required minlength="6" autocomplete="new-password">
       </div>
       <div class="auth-checkbox">
         <input type="checkbox" id="agreeTerms" required>
@@ -637,7 +630,7 @@ body {
 
 <!-- MAIN MENU -->
 <div class="screen" id="mainMenu">
-  <div class="menu-sidebar">
+  <div class="menu-sidebar" id="menuSidebar">
     <div class="sidebar-logo">⬛ BLOCKVERSE</div>
     <button class="menu-btn active" onclick="switchTab('home')" id="btnHome">
       <span class="btn-icon">🏠</span> Главная
@@ -655,7 +648,7 @@ body {
       <div class="avatar-head-mini">🧑</div>
       <div>
         <div style="font-size:13px;font-weight:700;" id="playerNameDisplay">Игрок</div>
-        <div style="font-size:11px;color:var(--text2);">Уровень 1</div>
+        <div style="font-size:11px;color:var(--text2);" id="playerLevel">Уровень 1</div>
       </div>
     </div>
   </div>
@@ -663,9 +656,9 @@ body {
   <div class="menu-content">
     <!-- HOME -->
     <div class="tab-content active" id="tabHome">
-      <div class="home-wrap">
-        <div class="home-banner">
-          <div class="banner-title">Играй. Создавай. Делись!</div>
+      <div class="home-wrap" id="homeWrap">
+        <div class="home-banner" id="homeBanner">
+          <div class="banner-title" id="bannerTitle">Играй. Создавай. Делись!</div>
           <div class="banner-sub">Тысячи уникальных 3D миров</div>
           <button class="banner-btn" onclick="launchRandomGame()">🎮 Играть сейчас</button>
         </div>
@@ -678,7 +671,7 @@ body {
     
     <!-- FRIENDS -->
     <div class="tab-content" id="tabFriends">
-      <div class="friends-wrap">
+      <div class="friends-wrap" id="friendsWrap">
         <div class="friends-header">
           <div>
             <div style="font-size:20px;font-weight:800;margin-bottom:3px;">Мои друзья</div>
@@ -702,14 +695,14 @@ body {
           <button class="tool-btn" style="margin-left:auto;background:rgba(6,214,160,0.12);color:#06d6a0;" onclick="publishStudioGame()">📤 Опубликовать</button>
         </div>
         <div class="studio-main">
-          <div class="studio-left">
+          <div class="studio-left" id="studioLeft">
             <div style="font-size:10px;font-weight:800;color:var(--text2);margin-bottom:8px;">ОБЪЕКТЫ</div>
             <div id="objList"></div>
           </div>
           <div class="studio-canvas-wrap">
             <canvas id="studioCanvas"></canvas>
           </div>
-          <div class="studio-right">
+          <div class="studio-right" id="studioRight">
             <div style="font-size:10px;font-weight:800;color:var(--text2);margin-bottom:8px;">СВОЙСТВА</div>
             <div style="margin-bottom:12px;">
               <div class="prop-label">Цвет</div>
@@ -730,8 +723,8 @@ body {
     
     <!-- AVATAR -->
     <div class="tab-content" id="tabAvatar">
-      <div class="avatar-wrap">
-        <div class="avatar-preview-panel">
+      <div class="avatar-wrap" id="avatarWrap">
+        <div class="avatar-preview-panel" id="avatarPreview">
           <div class="avatar-3d-wrap">
             <canvas id="avatarCanvas"></canvas>
           </div>
@@ -766,7 +759,7 @@ body {
   </div>
 
   <!-- Mobile Navigation -->
-  <div class="mobile-nav">
+  <div class="mobile-nav" id="mobileNav">
     <div class="mobile-nav-items">
       <button class="mobile-nav-btn active" onclick="switchTab('home')">
         <div class="nav-icon">🏠</div>
@@ -810,7 +803,7 @@ body {
       <div class="players-title">Игроки</div>
       <div id="playersInGame"></div>
     </div>
-    <div class="hud-chat">
+    <div class="hud-chat" id="hudChat">
       <div class="chat-messages" id="chatMessages"></div>
       <div style="display:flex;gap:5px;">
         <input class="chat-input" placeholder="Сообщение..." id="chatInput" onkeydown="if(event.key==='Enter')sendChat()">
@@ -819,7 +812,7 @@ body {
     </div>
     
     <!-- Mobile Controls -->
-    <div class="mobile-controls">
+    <div class="mobile-controls" id="mobileControls">
       <div class="joystick" id="joystick">
         <div class="joystick-knob" id="joystickKnob"></div>
       </div>
@@ -833,9 +826,30 @@ body {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
+// ===== DEVICE DETECTION =====
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                 ('ontouchstart' in window) || 
+                 (navigator.maxTouchPoints > 0);
+
+console.log('Device type:', isMobile ? 'Mobile' : 'Desktop');
+
 // ===== DATABASE (localStorage) =====
 const DB = {
   users: JSON.parse(localStorage.getItem('blockverse_users') || '{}'),
+  init() {
+    // Create admin account if not exists
+    if (!this.users['daiilbv']) {
+      this.users['daiilbv'] = { 
+        username: 'daiilbv', 
+        email: 'admin@blockverse.com', 
+        password: 'daniil2016', 
+        level: 99, 
+        isAdmin: true,
+        createdAt: Date.now() 
+      };
+      localStorage.setItem('blockverse_users', JSON.stringify(this.users));
+    }
+  },
   saveUser(username, email, password) {
     this.users[username.toLowerCase()] = { username, email, password, level: 1, createdAt: Date.now() };
     localStorage.setItem('blockverse_users', JSON.stringify(this.users));
@@ -849,26 +863,29 @@ const DB = {
   }
 };
 
+// Initialize admin
+DB.init();
+
 // ===== GAME DATA =====
 const GAMES = [
-  {name:'Treasure Island',players:'15,284',emoji:'🏝️',color:'#006064,#00838f',badge:'🔥',genre:'Приключение',type:'adventure',desc:'Исследуй острова полные сокровищ'},
-  {name:'Neon Racer',players:'12,190',emoji:'🏎️',color:'#b71c1c,#d32f2f',badge:'👑',genre:'Гонки',type:'racing',desc:'Футуристические гонки на скорости света'},
-  {name:'Dragon Quest',players:'9,445',emoji:'🐉',color:'#1b5e20,#388e3c',badge:null,genre:'РПГ',type:'rpg',desc:'Эпические сражения с драконами'},
-  {name:'Sky Parkour',players:'8,122',emoji:'🏔️',color:'#4a148c,#7b1fa2',badge:null,genre:'Паркур',type:'parkour',desc:'Экстремальный паркур среди облаков'},
-  {name:'Castle Wars',players:'7,003',emoji:'🏰',color:'#e65100,#f57c00',badge:null,genre:'PVP',type:'pvp',desc:'Командные битвы 5 на 5'},
-  {name:'Space Station',players:'5,889',emoji:'🚀',color:'#01579b,#0277bd',badge:null,genre:'Симулятор',type:'space',desc:'Управляй орбитальной станцией'},
-  {name:'Pizza Tycoon',players:'6,234',emoji:'🍕',color:'#e65100,#ff6f00',badge:null,genre:'Бизнес',type:'tycoon',desc:'Построй империю пиццерий'},
-  {name:'Horror Mansion',players:'4,556',emoji:'👻',color:'#212121,#424242',badge:null,genre:'Хоррор',type:'horror',desc:'Выживай в проклятом особняке'},
-  {name:'Dance Battle',players:'3,998',emoji:'💃',color:'#c2185b,#e91e63',badge:null,genre:'Ритм',type:'rhythm',desc:'Соревнуйся в танцевальных батлах'},
-  {name:'Zombie Survival',players:'5,441',emoji:'🧟',color:'#33691e,#689f38',badge:'🆕',genre:'Выживание',type:'survival',desc:'Выживай в мире зомби'},
+  {name:'Treasure Island',players:'15,284',emoji:'🏝️',color:'#006064,#00838f',badge:'🔥',genre:'Приключение',type:'adventure'},
+  {name:'Neon Racer',players:'12,190',emoji:'🏎️',color:'#b71c1c,#d32f2f',badge:'👑',genre:'Гонки',type:'racing'},
+  {name:'Dragon Quest',players:'9,445',emoji:'🐉',color:'#1b5e20,#388e3c',badge:null,genre:'РПГ',type:'rpg'},
+  {name:'Sky Parkour',players:'8,122',emoji:'🏔️',color:'#4a148c,#7b1fa2',badge:null,genre:'Паркур',type:'parkour'},
+  {name:'Castle Wars',players:'7,003',emoji:'🏰',color:'#e65100,#f57c00',badge:null,genre:'PVP',type:'pvp'},
+  {name:'Space Station',players:'5,889',emoji:'🚀',color:'#01579b,#0277bd',badge:null,genre:'Симулятор',type:'space'},
+  {name:'Pizza Tycoon',players:'6,234',emoji:'🍕',color:'#e65100,#ff6f00',badge:null,genre:'Бизнес',type:'tycoon'},
+  {name:'Horror Mansion',players:'4,556',emoji:'👻',color:'#212121,#424242',badge:null,genre:'Хоррор',type:'horror'},
+  {name:'Dance Battle',players:'3,998',emoji:'💃',color:'#c2185b,#e91e63',badge:null,genre:'Ритм',type:'rhythm'},
+  {name:'Zombie Survival',players:'5,441',emoji:'🧟',color:'#33691e,#689f38',badge:'🆕',genre:'Выживание',type:'survival'},
 ];
 const NEW_GAMES = [
-  {name:'Magic Academy',players:'892',emoji:'🔮',color:'#4a148c,#7b1fa2',badge:'🆕',genre:'РПГ',type:'rpg',desc:'Учись магии в академии волшебства'},
-  {name:'Skate Park Pro',players:'654',emoji:'🛹',color:'#ff6f00,#ff8f00',badge:'🆕',genre:'Спорт',type:'sports',desc:'Делай трюки на скейте'},
-  {name:'Ocean Explorer',players:'1,123',emoji:'🌊',color:'#006064,#00838f',badge:'🆕',genre:'Симулятор',type:'ocean',desc:'Исследуй морские глубины'},
-  {name:'Ninja Warriors',players:'2,344',emoji:'🥷',color:'#212121,#424242',badge:'🆕',genre:'Экшен',type:'action',desc:'Стань мастером ниндзя'},
-  {name:'City Builder',players:'1,876',emoji:'🏙️',color:'#455a64,#607d8b',badge:'🆕',genre:'Стратегия',type:'strategy',desc:'Построй мегаполис мечты'},
-  {name:'Pet Paradise',players:'567',emoji:'🐶',color:'#f06292,#ec407a',badge:'🆕',genre:'Симулятор',type:'pets',desc:'Заботься о милых питомцах'},
+  {name:'Magic Academy',players:'892',emoji:'🔮',color:'#4a148c,#7b1fa2',badge:'🆕',genre:'РПГ',type:'rpg'},
+  {name:'Skate Park Pro',players:'654',emoji:'🛹',color:'#ff6f00,#ff8f00',badge:'🆕',genre:'Спорт',type:'sports'},
+  {name:'Ocean Explorer',players:'1,123',emoji:'🌊',color:'#006064,#00838f',badge:'🆕',genre:'Симулятор',type:'ocean'},
+  {name:'Ninja Warriors',players:'2,344',emoji:'🥷',color:'#212121,#424242',badge:'🆕',genre:'Экшен',type:'action'},
+  {name:'City Builder',players:'1,876',emoji:'🏙️',color:'#455a64,#607d8b',badge:'🆕',genre:'Стратегия',type:'strategy'},
+  {name:'Pet Paradise',players:'567',emoji:'🐶',color:'#f06292,#ec407a',badge:'🆕',genre:'Симулятор',type:'pets'},
 ];
 const FRIENDS = [
   {name:'ProGamer_X',status:'В игре: Treasure Island',online:true,emoji:'🦊'},
@@ -910,6 +927,27 @@ let yaw = 0, pitch = 0;
 let joystickActive = false, joystickVector = { x: 0, y: 0 };
 let currentGameData = null;
 
+// ===== APPLY MOBILE STYLES =====
+function applyMobileStyles() {
+  if (isMobile) {
+    document.getElementById('menuSidebar').classList.add('mobile-hide');
+    document.getElementById('mobileNav').classList.add('mobile-show');
+    document.getElementById('homeWrap').classList.add('mobile-padding');
+    document.getElementById('homeBanner').classList.add('mobile-padding');
+    document.getElementById('bannerTitle').classList.add('mobile-size');
+    document.querySelectorAll('.games-grid').forEach(g => g.classList.add('mobile-grid'));
+    document.getElementById('friendsWrap').classList.add('mobile-padding');
+    document.getElementById('studioLeft').classList.add('mobile-hide');
+    document.getElementById('studioRight').classList.add('mobile-hide');
+    document.getElementById('avatarWrap').classList.add('mobile-style');
+    document.getElementById('avatarPreview').classList.add('mobile-full');
+    document.querySelectorAll('.skin-grid').forEach(g => g.classList.add('mobile-grid'));
+    document.querySelectorAll('.items-grid').forEach(g => g.classList.add('mobile-grid'));
+    document.getElementById('hudChat').classList.add('mobile-size');
+    document.getElementById('mobileControls').classList.add('mobile-show');
+  }
+}
+
 // ===== AUTH =====
 function switchAuthTab(tab) {
   document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
@@ -939,10 +977,12 @@ function handleLogin(e) {
     currentUser = user.username;
     document.getElementById('playerNameDisplay').textContent = currentUser;
     document.getElementById('avatarNameDisplay').textContent = currentUser;
+    document.getElementById('playerLevel').textContent = `Уровень ${user.level}${user.isAdmin?' 👑':''}`;
     startLoading();
   } else {
     showError('❌ Неверное имя пользователя или пароль');
   }
+  return false;
 }
 
 function handleRegister(e) {
@@ -954,29 +994,31 @@ function handleRegister(e) {
   
   if (username.length < 3) {
     showError('❌ Имя должно быть минимум 3 символа');
-    return;
+    return false;
   }
   
   if (DB.getUser(username)) {
     showError('❌ Это имя уже занято');
-    return;
+    return false;
   }
   
   if (password.length < 6) {
     showError('❌ Пароль должен быть минимум 6 символов');
-    return;
+    return false;
   }
   
   if (password !== passwordConfirm) {
     showError('❌ Пароли не совпадают');
-    return;
+    return false;
   }
   
   DB.saveUser(username, email, password);
   currentUser = username;
   document.getElementById('playerNameDisplay').textContent = currentUser;
   document.getElementById('avatarNameDisplay').textContent = currentUser;
+  document.getElementById('playerLevel').textContent = 'Уровень 1';
   startLoading();
+  return false;
 }
 
 // ===== LOADING =====
@@ -1003,6 +1045,7 @@ function fakeLoad() {
 function showMenu() {
   document.getElementById('loadingScreen').classList.remove('active');
   document.getElementById('mainMenu').classList.add('active');
+  applyMobileStyles();
   buildUI();
   initAvatar();
   initStudio();
@@ -1154,22 +1197,22 @@ function showNotif(text) {
   }, 2000);
 }
 
-// ===== AVATAR 3D =====
+// ===== AVATAR 3D (IMPROVED CHARACTER) =====
 function initAvatar() {
   const canvas = document.getElementById('avatarCanvas');
   avatarScene = new THREE.Scene();
   avatarCamera = new THREE.PerspectiveCamera(50, 200/260, 0.1, 100);
-  avatarCamera.position.set(0, 1.8, 6);
-  avatarCamera.lookAt(0, 1.2, 0);
+  avatarCamera.position.set(0, 2, 7);
+  avatarCamera.lookAt(0, 1.5, 0);
   avatarRenderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:true });
   avatarRenderer.setSize(200, 260);
   avatarRenderer.setClearColor(0x000000, 0);
   
-  avatarScene.add(new THREE.AmbientLight(0xffffff, 0.9));
-  const dl=new THREE.DirectionalLight(0xffffff, 1.3);
-  dl.position.set(3,6,4); avatarScene.add(dl);
-  const dl2=new THREE.DirectionalLight(0x7c3aed,0.5);
-  dl2.position.set(-3,3,-3); avatarScene.add(dl2);
+  avatarScene.add(new THREE.AmbientLight(0xffffff, 1));
+  const dl=new THREE.DirectionalLight(0xffffff, 1.4);
+  dl.position.set(4,7,5); avatarScene.add(dl);
+  const dl2=new THREE.DirectionalLight(0x7c3aed,0.6);
+  dl2.position.set(-4,4,-4); avatarScene.add(dl2);
   
   buildAvatarMesh();
   animAvatar();
@@ -1183,86 +1226,98 @@ function buildAvatarMesh() {
   const pantsC = [0x1565c0,0xff8c00,0x333355,0xffd60a,0x2e7d32,0x222222][avatarState.pants%6];
   const m = (c)=>new THREE.MeshLambertMaterial({color:c});
   
-  // Body with better proportions
-  const torso=new THREE.Mesh(new THREE.BoxGeometry(1.2,1.4,0.6),m(shirtC));
-  torso.position.y=1.5; g.add(torso);
+  // Better proportioned body
+  const torso=new THREE.Mesh(new THREE.BoxGeometry(1.3,1.6,0.7),m(shirtC));
+  torso.position.y=1.8; g.add(torso);
   
-  // Head
-  const head=new THREE.Mesh(new THREE.BoxGeometry(1,1,1),m(skinC));
-  head.position.y=2.7; g.add(head);
+  // Head with better size
+  const head=new THREE.Mesh(new THREE.BoxGeometry(1.1,1.1,1.1),m(skinC));
+  head.position.y=3; g.add(head);
   
-  // Eyes with whites
-  const eyeWhiteL=new THREE.Mesh(new THREE.BoxGeometry(0.25,0.25,0.06),m(0xffffff));
-  eyeWhiteL.position.set(-0.25,2.75,0.51); g.add(eyeWhiteL);
-  const eyeWhiteR=eyeWhiteL.clone(); eyeWhiteR.position.x=0.25; g.add(eyeWhiteR);
+  // Eyes with depth
+  const eyeWhiteL=new THREE.Mesh(new THREE.BoxGeometry(0.3,0.3,0.08),m(0xffffff));
+  eyeWhiteL.position.set(-0.3,3.05,0.56); g.add(eyeWhiteL);
+  const eyeWhiteR=eyeWhiteL.clone(); eyeWhiteR.position.x=0.3; g.add(eyeWhiteR);
   
-  const pupilL=new THREE.Mesh(new THREE.BoxGeometry(0.12,0.15,0.06),m(0x1a1a1a));
-  pupilL.position.set(-0.25,2.75,0.52); g.add(pupilL);
-  const pupilR=pupilL.clone(); pupilR.position.x=0.25; g.add(pupilR);
+  const pupilL=new THREE.Mesh(new THREE.BoxGeometry(0.15,0.18,0.08),m(0x0a0a0a));
+  pupilL.position.set(-0.3,3.05,0.57); g.add(pupilL);
+  const pupilR=pupilL.clone(); pupilR.position.x=0.3; g.add(pupilR);
   
-  // Smile
-  const smile=new THREE.Mesh(new THREE.BoxGeometry(0.5,0.1,0.06),m(0x8d4004));
-  smile.position.set(0,2.45,0.51); g.add(smile);
+  // Better smile
+  const smile=new THREE.Mesh(new THREE.BoxGeometry(0.6,0.12,0.08),m(0x8d4004));
+  smile.position.set(0,2.7,0.56); g.add(smile);
   
-  // Hair
+  // Hair styles
   if(avatarState.hair>0&&avatarState.hair<4) {
     const hc=[0,0x2c1503,0xffd700,0xff4500][avatarState.hair]||0x2c1503;
-    const hair=new THREE.Mesh(new THREE.BoxGeometry(1.1,0.35,1.1),m(hc));
-    hair.position.y=3.15; g.add(hair);
+    const hair=new THREE.Mesh(new THREE.BoxGeometry(1.2,0.4,1.2),m(hc));
+    hair.position.y=3.5; g.add(hair);
   }
-  if(avatarState.hair===4) { // Mohawk
-    const mohawk=new THREE.Mesh(new THREE.BoxGeometry(0.3,0.6,0.9),m(0xff4500));
-    mohawk.position.y=3.3; g.add(mohawk);
+  if(avatarState.hair===4) {
+    const mohawk=new THREE.Mesh(new THREE.BoxGeometry(0.35,0.7,1),m(0xff4500));
+    mohawk.position.y=3.65; g.add(mohawk);
   }
-  if(avatarState.hair===5) { // Crown
-    const crown=new THREE.Mesh(new THREE.CylinderGeometry(0.55,0.55,0.3,8),m(0xffd700));
-    crown.position.y=3.2; g.add(crown);
+  if(avatarState.hair===5) {
+    const crown=new THREE.Mesh(new THREE.CylinderGeometry(0.6,0.6,0.35,8),m(0xffd700));
+    crown.position.y=3.6; g.add(crown);
+    for(let i=0;i<8;i++){
+      const spike=new THREE.Mesh(new THREE.ConeGeometry(0.15,0.4,4),m(0xffd700));
+      const ang=i*Math.PI/4;
+      spike.position.set(Math.cos(ang)*0.5,3.9,Math.sin(ang)*0.5);
+      g.add(spike);
+    }
   }
   
-  // Legs
-  const legL=new THREE.Mesh(new THREE.BoxGeometry(0.5,1.2,0.5),m(pantsC));
-  legL.position.set(-0.35,0.6,0); g.add(legL);
-  const legR=legL.clone(); legR.position.x=0.35; g.add(legR);
+  // Legs with shoes
+  const legL=new THREE.Mesh(new THREE.BoxGeometry(0.55,1.4,0.55),m(pantsC));
+  legL.position.set(-0.4,0.7,0); g.add(legL);
+  const legR=legL.clone(); legR.position.x=0.4; g.add(legR);
   
-  // Arms with better positioning
-  const armL=new THREE.Mesh(new THREE.BoxGeometry(0.4,1.2,0.4),m(skinC));
-  armL.position.set(-0.85,1.5,0); g.add(armL);
-  const armR=armL.clone(); armR.position.x=0.85; g.add(armR);
+  const shoeL=new THREE.Mesh(new THREE.BoxGeometry(0.6,0.3,0.8),m(0x1a1a1a));
+  shoeL.position.set(-0.4,0.15,0.15); g.add(shoeL);
+  const shoeR=shoeL.clone(); shoeR.position.x=0.4; g.add(shoeR);
   
-  // Shoes
-  const shoeL=new THREE.Mesh(new THREE.BoxGeometry(0.52,0.25,0.7),m(0x1a1a1a));
-  shoeL.position.set(-0.35,0.12,0.1); g.add(shoeL);
-  const shoeR=shoeL.clone(); shoeR.position.x=0.35; g.add(shoeR);
+  // Arms
+  const armL=new THREE.Mesh(new THREE.BoxGeometry(0.45,1.4,0.45),m(skinC));
+  armL.position.set(-0.95,1.8,0); g.add(armL);
+  const armR=armL.clone(); armR.position.x=0.95; g.add(armR);
   
   // Accessories
-  if(avatarState.acc===1) { // Glasses
-    const gl=new THREE.Mesh(new THREE.TorusGeometry(0.15,0.03,8,16),m(0x111111));
-    gl.position.set(-0.25,2.75,0.55); gl.rotation.y=Math.PI/2; g.add(gl);
-    const gr=gl.clone(); gr.position.x=0.25; g.add(gr);
-    const bridge=new THREE.Mesh(new THREE.BoxGeometry(0.3,0.03,0.03),m(0x111111));
-    bridge.position.set(0,2.75,0.55); g.add(bridge);
+  if(avatarState.acc===1) {
+    const gl=new THREE.Mesh(new THREE.TorusGeometry(0.18,0.04,8,16),m(0x111111));
+    gl.position.set(-0.3,3.05,0.6); gl.rotation.y=Math.PI/2; g.add(gl);
+    const gr=gl.clone(); gr.position.x=0.3; g.add(gr);
+    const bridge=new THREE.Mesh(new THREE.BoxGeometry(0.4,0.04,0.04),m(0x111111));
+    bridge.position.set(0,3.05,0.6); g.add(bridge);
   }
-  if(avatarState.acc===2) { // Wings
-    const wingL=new THREE.Mesh(new THREE.BoxGeometry(0.1,0.8,1.2),m(0x7c3aed));
-    wingL.position.set(-0.7,2,0); wingL.rotation.y=-Math.PI/6; g.add(wingL);
-    const wingR=wingL.clone(); wingR.position.x=0.7; wingR.rotation.y=Math.PI/6; g.add(wingR);
+  if(avatarState.acc===2) {
+    const wingL=new THREE.Mesh(new THREE.BoxGeometry(0.12,1,1.5),m(0x9c27b0));
+    wingL.position.set(-0.8,2.3,0); wingL.rotation.y=-Math.PI/5; g.add(wingL);
+    const wingR=wingL.clone(); wingR.position.x=0.8; wingR.rotation.y=Math.PI/5; g.add(wingR);
   }
-  if(avatarState.acc===3) { // Sword
-    const sword=new THREE.Mesh(new THREE.BoxGeometry(0.08,1.5,0.08),m(0xaaaaaa));
-    sword.position.set(1.3,1.5,0); sword.rotation.z=-Math.PI/4; g.add(sword);
-    const handle=new THREE.Mesh(new THREE.BoxGeometry(0.12,0.3,0.12),m(0x8d4004));
-    handle.position.set(1.15,0.9,0); handle.rotation.z=-Math.PI/4; g.add(handle);
+  if(avatarState.acc===3) {
+    const sword=new THREE.Mesh(new THREE.BoxGeometry(0.1,1.8,0.1),m(0xcccccc));
+    sword.position.set(1.4,1.8,0); sword.rotation.z=-Math.PI/5; g.add(sword);
+    const handle=new THREE.Mesh(new THREE.BoxGeometry(0.15,0.4,0.15),m(0x8d4004));
+    handle.position.set(1.25,1.1,0); handle.rotation.z=-Math.PI/5; g.add(handle);
+    const guard=new THREE.Mesh(new THREE.BoxGeometry(0.5,0.08,0.08),m(0xffd700));
+    guard.position.set(1.3,1.3,0); guard.rotation.z=-Math.PI/5; g.add(guard);
   }
-  if(avatarState.acc===4) { // Shield
-    const shield=new THREE.Mesh(new THREE.BoxGeometry(0.08,1,0.8),m(0xff4d6d));
-    shield.position.set(-1.1,1.5,0); g.add(shield);
+  if(avatarState.acc===4) {
+    const shield=new THREE.Mesh(new THREE.BoxGeometry(0.1,1.2,1),m(0xff4d6d));
+    shield.position.set(-1.2,1.8,0); g.add(shield);
+    const emblem=new THREE.Mesh(new THREE.BoxGeometry(0.11,0.4,0.4),m(0xffd700));
+    emblem.position.set(-1.21,1.8,0); g.add(emblem);
   }
-  if(avatarState.acc===5) { // Backpack
-    const pack=new THREE.Mesh(new THREE.BoxGeometry(0.8,0.9,0.4),m(0x2e7d32));
-    pack.position.set(0,1.8,-0.5); g.add(pack);
+  if(avatarState.acc===5) {
+    const pack=new THREE.Mesh(new THREE.BoxGeometry(0.9,1,0.5),m(0x2e7d32));
+    pack.position.set(0,2.2,-0.6); g.add(pack);
+    const strapL=new THREE.Mesh(new THREE.BoxGeometry(0.1,1,0.1),m(0x1a5e20));
+    strapL.position.set(-0.3,2.2,0); g.add(strapL);
+    const strapR=strapL.clone(); strapR.position.x=0.3; g.add(strapR);
   }
   
-  g.position.y=-1.2;
+  g.position.y=-1.5;
   avatarMesh=g;
   avatarScene.add(g);
 }
@@ -1407,7 +1462,7 @@ function resizeStudio() {
   studioCamera.updateProjectionMatrix();
 }
 
-// ===== GAME ENGINE =====
+// ===== GAME ENGINE (DIVERSE WORLDS) =====
 function launchRandomGame() {
   const allGames = [...GAMES, ...NEW_GAMES];
   launchGame(allGames[Math.floor(Math.random()*allGames.length)]);
@@ -1432,7 +1487,7 @@ function buildGameWorld(game) {
   
   gameScene=new THREE.Scene();
   
-  // Unique environment per game type
+  // UNIQUE environments per type
   const envConfig = {
     adventure: { bg: 0x87CEEB, fog: [0x87CEEB, 30, 80], ground: 0xc2b280 },
     racing: { bg: 0x1a0533, fog: [0x1a0533, 25, 60], ground: 0x2a2a3e },
@@ -1474,22 +1529,19 @@ function buildGameWorld(game) {
   ground.rotation.x=-Math.PI/2; ground.receiveShadow=true;
   gameScene.add(ground);
   
-  // Type-specific world generation
+  // DIVERSE world generation
   if(game.type === 'racing') {
-    // Racing track with barriers
     for(let i=0;i<30;i++){
       const barrier=new THREE.Mesh(
-        new THREE.BoxGeometry(0.6,1.8,3),
+        new THREE.CylinderGeometry(0.3,0.3,2.5,8),
         new THREE.MeshLambertMaterial({color:i%2===0?0xff4d6d:0xffd60a})
       );
       const ang=i*0.21;
-      barrier.position.set(Math.cos(ang)*18,0.9,Math.sin(ang)*18);
-      barrier.rotation.y=ang;
+      barrier.position.set(Math.cos(ang)*18,1.25,Math.sin(ang)*18);
       barrier.castShadow=true;
       gameScene.add(barrier);
     }
   } else if(game.type === 'horror') {
-    // Dark walls creating maze
     for(let i=0;i<12;i++){
       const wall=new THREE.Mesh(
         new THREE.BoxGeometry(3,4,0.3),
@@ -1502,7 +1554,6 @@ function buildGameWorld(game) {
       gameScene.add(wall);
     }
   } else if(game.type === 'rpg') {
-    // Castle towers
     for(let i=0;i<8;i++){
       const tower=new THREE.Mesh(
         new THREE.CylinderGeometry(1.8,2,6,12),
@@ -1521,10 +1572,9 @@ function buildGameWorld(game) {
       gameScene.add(roof);
     }
   } else if(game.type === 'parkour') {
-    // Floating platforms
     for(let i=0;i<20;i++){
       const platform=new THREE.Mesh(
-        new THREE.BoxGeometry(2+Math.random()*2,0.5,2+Math.random()*2),
+        new THREE.CylinderGeometry(1.5+Math.random(),1.5+Math.random(),0.6,16),
         new THREE.MeshLambertMaterial({color:0x4fc3f7})
       );
       const ang=Math.random()*Math.PI*2;
@@ -1534,19 +1584,17 @@ function buildGameWorld(game) {
       gameScene.add(platform);
     }
   } else if(game.type === 'space') {
-    // Space station modules
     for(let i=0;i<10;i++){
       const module=new THREE.Mesh(
-        new THREE.BoxGeometry(3,2,3),
+        new THREE.SphereGeometry(2,12,12),
         new THREE.MeshLambertMaterial({color:0x2a3a4a})
       );
       const ang=i*Math.PI/5;
-      module.position.set(Math.cos(ang)*20,1,Math.sin(ang)*20);
+      module.position.set(Math.cos(ang)*20,2,Math.sin(ang)*20);
       module.castShadow=true;
       gameScene.add(module);
     }
   } else if(game.type === 'tycoon') {
-    // Buildings
     for(let i=0;i<8;i++){
       const building=new THREE.Mesh(
         new THREE.BoxGeometry(4,3+Math.random()*4,4),
@@ -1559,10 +1607,9 @@ function buildGameWorld(game) {
       gameScene.add(building);
     }
   } else if(game.type === 'ocean') {
-    // Underwater rocks
     for(let i=0;i<15;i++){
       const rock=new THREE.Mesh(
-        new THREE.SphereGeometry(1+Math.random()*2,8,8),
+        new THREE.DodecahedronGeometry(1+Math.random()*2),
         new THREE.MeshLambertMaterial({color:0x3a5a6a})
       );
       const ang=Math.random()*Math.PI*2;
@@ -1572,17 +1619,21 @@ function buildGameWorld(game) {
       gameScene.add(rock);
     }
   } else {
-    // Default varied blocks
     const colors=[0xff4d6d,0x7c3aed,0x06d6a0,0xffd60a,0x4fc3f7,0xff6b35,0xec407a,0x8bc34a];
     for(let i=0;i<25;i++){
-      const w=1+Math.random()*2.5, h=0.8+Math.random()*4, d=1+Math.random()*2.5;
+      const shapes = [
+        new THREE.BoxGeometry(1+Math.random()*2,0.8+Math.random()*4,1+Math.random()*2),
+        new THREE.CylinderGeometry(0.5+Math.random(),0.5+Math.random(),1+Math.random()*3,12),
+        new THREE.SphereGeometry(0.5+Math.random()*1.5,12,12),
+        new THREE.ConeGeometry(0.5+Math.random(),1+Math.random()*2,8)
+      ];
       const mesh=new THREE.Mesh(
-        new THREE.BoxGeometry(w,h,d),
+        shapes[Math.floor(Math.random()*shapes.length)],
         new THREE.MeshLambertMaterial({color:colors[i%colors.length]})
       );
       const ang=Math.random()*Math.PI*2;
       const dist=10+Math.random()*22;
-      mesh.position.set(Math.cos(ang)*dist,h/2,Math.sin(ang)*dist);
+      mesh.position.set(Math.cos(ang)*dist,mesh.geometry.parameters.height||1,Math.sin(ang)*dist);
       mesh.castShadow=true; mesh.receiveShadow=true;
       gameScene.add(mesh);
     }
@@ -1592,37 +1643,43 @@ function buildGameWorld(game) {
   const coinColor = game.type==='rpg'?0x7c3aed:game.type==='space'?0x4fc3f7:0xffd60a;
   for(let i=0;i<15;i++){
     const coin=new THREE.Mesh(
-      new THREE.CylinderGeometry(0.35,0.35,0.12,16),
+      new THREE.TorusGeometry(0.35,0.12,8,16),
       new THREE.MeshLambertMaterial({color:coinColor})
     );
     const ang=Math.random()*Math.PI*2;
     const dist=6+Math.random()*18;
     coin.position.set(Math.cos(ang)*dist,1.2+Math.random()*2.5,Math.sin(ang)*dist);
+    coin.rotation.x=Math.PI/2;
     coin.userData.isCoin=true;
     gameScene.add(coin);
   }
   
-  // Player with better model
+  // IMPROVED PLAYER MODEL
   const pg=new THREE.Group();
   const torso=new THREE.Mesh(
-    new THREE.BoxGeometry(0.8,1.2,0.5),
+    new THREE.BoxGeometry(0.9,1.3,0.6),
     new THREE.MeshLambertMaterial({color:new THREE.Color(avatarState.skin||'#FDDBB4')})
   );
-  torso.position.y=0.6;
+  torso.position.y=0.65;
   const head=new THREE.Mesh(
-    new THREE.BoxGeometry(0.7,0.7,0.7),
+    new THREE.BoxGeometry(0.8,0.8,0.8),
     new THREE.MeshLambertMaterial({color:new THREE.Color(avatarState.skin||'#FDDBB4')})
   );
-  head.position.y=1.5;
+  head.position.y=1.6;
   pg.add(torso); pg.add(head);
+  
+  // Eyes
+  const eyeL=new THREE.Mesh(new THREE.BoxGeometry(0.15,0.15,0.05),new THREE.MeshLambertMaterial({color:0x0a0a0a}));
+  eyeL.position.set(-0.2,1.65,0.41); pg.add(eyeL);
+  const eyeR=eyeL.clone(); eyeR.position.x=0.2; pg.add(eyeR);
   
   // Legs
   const legL=new THREE.Mesh(
-    new THREE.BoxGeometry(0.35,0.9,0.35),
+    new THREE.BoxGeometry(0.38,1,0.38),
     new THREE.MeshLambertMaterial({color:0x1565c0})
   );
-  legL.position.set(-0.22,0.45,0);
-  const legR=legL.clone(); legR.position.x=0.22;
+  legL.position.set(-0.25,0.5,0);
+  const legR=legL.clone(); legR.position.x=0.25;
   pg.add(legL); pg.add(legR);
   
   player=pg;
@@ -1659,7 +1716,7 @@ function gameLoop() {
   gameCamera.lookAt(playerPos.x,playerY+1.8,playerPos.z);
   
   gameScene.children.filter(c=>c.userData&&c.userData.isCoin).forEach(coin=>{
-    coin.rotation.y+=0.05;
+    coin.rotation.z+=0.05;
     if(player.position.distanceTo(coin.position)<1.8){
       gameScene.remove(coin);
       score+=10;
